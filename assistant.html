@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Sahayak - Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="nav-link">← Back</a>
+        <div class="nav-brand">AI-Sahayak</div>
+        <a href="profile.html" class="nav-link">Profile</a>
+    </nav>
+    
+    <div class="container">
+        <div class="assistant-container">
+            <h2 id="moduleTitle">AI Assistant</h2>
+            
+            <div class="input-section">
+                <div class="voice-input">
+                    <button id="micBtn" class="mic-btn" aria-label="Voice input">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 14C13.66 14 15 12.66 15 11V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 12.66 10.34 14 12 14Z" fill="white"/>
+                            <path d="M17 11C17 13.76 14.76 16 12 16C9.24 16 7 13.76 7 11H5C5 14.53 7.61 17.43 11 17.92V21H13V17.92C16.39 17.43 19 14.53 19 11H17Z" fill="white"/>
+                        </svg>
+                    </button>
+                    <span id="listeningStatus" class="listening-status"></span>
+                </div>
+                
+                <div class="text-input-group">
+                    <textarea id="queryInput" placeholder="Type your question here..." rows="3"></textarea>
+                </div>
+                
+                <button id="askBtn" class="btn-primary">Ask AI-Sahayak</button>
+            </div>
+            
+            <div id="responseArea" class="response-area">
+                <div class="response-placeholder">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <circle cx="30" cy="30" r="28" fill="#FF6B35" opacity="0.1"/>
+                        <path d="M30 15C21.716 15 15 21.716 15 30C15 38.284 21.716 45 30 45C38.284 45 45 38.284 45 30C45 21.716 38.284 15 30 15ZM30 25C32.761 25 35 27.239 35 30C35 32.761 32.761 35 30 35C27.239 35 25 32.761 25 30C25 27.239 27.239 25 30 25Z" fill="#FF6B35"/>
+                    </svg>
+                    <p>Ask me anything about government schemes, market prices, health, education, and more!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

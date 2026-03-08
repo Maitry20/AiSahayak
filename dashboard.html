@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Sahayak - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>AI-Sahayak</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#profile" class="nav-item">Profile</a>
+            <a href="#about" class="nav-item">About Us</a>
+            <a href="#howto" class="nav-item">How to Use</a>
+        </nav>
+    </div>
+    
+    <div class="main-content">
+        <div class="top-bar">
+            <h1>How can I help you today?</h1>
+            <div class="language-dropdown">
+                <select id="languageSelect">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="hi">🇮🇳 हिंदी</option>
+                    <option value="bn">🇮🇳 বাংলা</option>
+                    <option value="te">🇮🇳 తెలుగు</option>
+                    <option value="mr">🇮🇳 मराठी</option>
+                    <option value="ta">🇮🇳 தமிழ்</option>
+                    <option value="gu">🇮🇳 ગુજરાતી</option>
+                    <option value="kn">🇮🇳 ಕನ್ನಡ</option>
+                    <option value="ml">🇮🇳 മലയാളം</option>
+                    <option value="pa">🇮🇳 ਪੰਜਾਬੀ</option>
+                    <option value="or">🇮🇳 ଓଡ଼ିଆ</option>
+                    <option value="as">🇮🇳 অসমীয়া</option>
+                    <option value="ur">🇮🇳 اردو</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="input-section">
+            <div class="input-flex">
+                <div class="voice-input">
+                    <button id="micBtn" class="mic-btn" aria-label="Voice input">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 14C13.66 14 15 12.66 15 11V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 12.66 10.34 14 12 14Z" fill="white"/>
+                            <path d="M17 11C17 13.76 14.76 16 12 16C9.24 16 7 13.76 7 11H5C5 14.53 7.61 17.43 11 17.92V21H13V17.92C16.39 17.43 19 14.53 19 11H17Z" fill="white"/>
+                        </svg>
+                    </button>
+                    <span id="listeningStatus" class="listening-status"></span>
+                </div>
+                
+                <div class="text-input-wrapper">
+                    <textarea id="queryInput" placeholder="Ask me anything... 💬" rows="2"></textarea>
+                    <button id="askBtn" class="btn-ask">🚀 Ask</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-banner">
+            <div class="stat-item">
+                <span class="stat-icon">💬</span>
+                <div>
+                    <div class="stat-number" id="totalQueries">0</div>
+                    <div class="stat-label">Queries</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">🎯</span>
+                <div>
+                    <div class="stat-number" id="modulesUsed">0</div>
+                    <div class="stat-label">Modules Used</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">👤</span>
+                <div>
+                    <div class="stat-number" id="userName">Guest</div>
+                    <div class="stat-label">User</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="responseArea" class="response-area" style="display:none;"></div>
+        
+        <div class="modules-grid">
+            <div class="module-card" data-module="sahay-seva">
+                <div class="module-emoji">🏛️</div>
+                <h3>Sahay-Seva</h3>
+                <p>Government schemes & benefits</p>
+            </div>
+            
+            <div class="module-card" data-module="market-mitra">
+                <div class="module-emoji">🌾</div>
+                <h3>MarketMitra</h3>
+                <p>Crop & market prices</p>
+            </div>
+            
+            <div class="module-card" data-module="sahay-udyam">
+                <div class="module-emoji">💼</div>
+                <h3>Sahay-Udyam</h3>
+                <p>Small business & loans</p>
+            </div>
+            
+            <div class="module-card" data-module="sahay-swasthya">
+                <div class="module-emoji">🏥</div>
+                <h3>Sahay-Swasthya</h3>
+                <p>Health schemes & support</p>
+            </div>
+            
+            <div class="module-card" data-module="sahay-nyay">
+                <div class="module-emoji">⚖️</div>
+                <h3>Sahay-Nyay</h3>
+                <p>Legal rights & awareness</p>
+            </div>
+            
+            <div class="module-card" data-module="sahay-shiksha">
+                <div class="module-emoji">📚</div>
+                <h3>Sahay-Shiksha</h3>
+                <p>Education & scholarships</p>
+            </div>
+        </div>
+        
+        <div id="profile" class="section">
+            <h2>Profile</h2>
+            <p><strong>Name:</strong> <span id="profileName">Guest User</span></p>
+            <p><strong>Phone:</strong> <span id="profilePhone">Not provided</span></p>
+            <p><strong>Queries:</strong> <span id="totalQueries">0</span></p>
+        </div>
+        
+        <div id="about" class="section">
+            <h2>About Us</h2>
+            <p>AI-Sahayak is a digital assistant designed to help Indian citizens access government schemes, market information, health services, legal awareness, education support, and business guidance.</p>
+        </div>
+        
+        <div id="howto" class="section">
+            <h2>How to Use</h2>
+            <ol>
+                <li>Click the microphone button or type your question</li>
+                <li>Select a module card for specific assistance</li>
+                <li>Change language from the dropdown menu</li>
+                <li>Get instant AI-powered responses</li>
+            </ol>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

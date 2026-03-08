@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Sahayak - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html" class="nav-link">← Back</a>
+        <div class="nav-brand">AI-Sahayak</div>
+        <div></div>
+    </nav>
+    
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="38" fill="#FF6B35" opacity="0.1"/>
+                        <path d="M40 40C46.627 40 52 34.627 52 28C52 21.373 46.627 16 40 16C33.373 16 28 21.373 28 28C28 34.627 33.373 40 40 40Z" fill="#FF6B35"/>
+                        <path d="M40 44C28 44 18 49 18 56V64H62V56C62 49 52 44 40 44Z" fill="#FF6B35"/>
+                    </svg>
+                </div>
+                <h2 id="profileName">Guest User</h2>
+            </div>
+            
+            <div class="profile-info">
+                <div class="info-item">
+                    <label>Phone Number</label>
+                    <p id="profilePhone">Not provided</p>
+                </div>
+                
+                <div class="info-item">
+                    <label>Language Preference</label>
+                    <select id="languageSelect" class="language-select">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                        <option value="bn">বাংলা (Bengali)</option>
+                        <option value="te">తెలుగు (Telugu)</option>
+                        <option value="mr">मराठी (Marathi)</option>
+                        <option value="ta">தமிழ் (Tamil)</option>
+                    </select>
+                </div>
+                
+                <div class="info-item">
+                    <label>Usage Statistics</label>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="totalQueries">0</div>
+                            <div class="stat-label">Total Queries</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="modulesUsed">0</div>
+                            <div class="stat-label">Modules Used</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn-secondary" onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
